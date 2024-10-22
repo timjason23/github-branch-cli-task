@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stle.css"> 
+    <title>Animations</title>
+</head>
+<body>
+    <header>
+        <h1>Tim Jason G. Gonzales</h1>
+        <p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGznRVE5U6uL-v2k4LTKcKMsUgFZVgCzzDAQ&s" alt="Profile Picture"></p>
+        <p class="centered">
+            <a href="mailto:timjason@example.com" class="button" aria-label="Email Tim Jason G. Gonzales">Contact Me</a>
+            <a href="#" class="button" aria-label="Download Resume">Download Resume</a>
+        </p>
+        <p class="centered">
+            <a href="https://www.linkedin.com" class="social-link">LinkedIn</a>
+            <a href="https://www.github.com" class="social-link">GitHub</a>
+        </p>
+    </header>
+
+    <main>
+        <div class="content">
+            <h2>Summary</h2>
+            <p>I am currently pursuing a Bachelor of Science in Information Technology at Central Philippine University. My studies include courses in programming, data analysis, cybersecurity, and network administration. I am eager to apply my skills to real-world problems.</p>
+            <hr />
+
+            <section>
+                <h2>Work Experience</h2>
+                <ul>
+                    <li><b>IT Help Desk Representative</b></li>
+                    <p>Providing technical support and resolving computer issues for customers.</p>
+                    <li><b>IT Director</b></li>
+                    <p>Overseeing the implementation of technology systems and managing IT teams.</p>
+                </ul>
+            </section>
+            <hr />
+
+            <section>
+                <h2>Skills</h2>
+                <div class="skill-container">
+                    <div class="skill">
+                        <p>HTML</p>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill html" data-skill-level="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <p>CSS</p>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill css" data-skill-level="80"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <p>JavaScript</p>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill javascript" data-skill-level="75"></div>
+                        </div>
+                    </div>
+                </div>
+                <button class="button" id="start-animation">Animate Skill Bars</button>
+            </section>
+            <hr />
+
+            <section>
+                <h2>Education</h2>
+                <ul>
+                    <li><a href="https://cpu.edu.ph/">Central Philippine University</a></li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>All rights reserved © 2024</p>
+    </footer>
+
+    <script>
+        function animateSkillBars() {
+            const skills = document.querySelectorAll('.skill-bar-fill');
+            skills.forEach(skill => {
+                skill.style.width = skill.getAttribute('data-skill-level') + '%';
+            });
+        }
+
+        document.getElementById('start-animation').addEventListener('click', animateSkillBars);
+        window.onload = animateSkillBars; // Automatically animate on load
+    </script>
+</body>
+</html>
